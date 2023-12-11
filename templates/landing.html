@@ -1,0 +1,50 @@
+<!-- landing.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shoe Shop</title>
+    <style>
+        .shoe-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+        }
+
+        .shoe-image {
+            width: 100%;
+            height: auto;
+        }
+
+        .add-to-cart-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="shoe-grid">
+        <div>
+            <img class="shoe-image" src="look/shoe1.jpg" alt="Shoe 1">
+            <button class="add-to-cart-button">ADD TO CART</button>
+        </div>
+        <div>
+            <img class="shoe-image" src="look/shoe2.jpg" alt="Shoe 2">
+            <button class="add-to-cart-button">ADD TO CART</button>
+        </div>
+        <div>
+            <img class="shoe-image" src="look/shoe3.jpg" alt="Shoe 3">
+            <button class="add-to-cart-button">ADD TO CART</button>
+        </div>
+        <div>
+            <img class="shoe-image" src="look/shoe4.jpg" alt="Shoe 4">
+            <button class="add-to-cart-button">ADD TO CART</button>
+        </div>
+    </div>
+</body>
+</html>
