@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="/static/css/register.css">
 </head>
 <body>
+    {% extends "nav.html" %}
+    {% block content %}
     <div class="grid">
         {% with messages = get_flashed_messages() %}
         {% if messages %}
@@ -38,5 +40,6 @@
             </div>
         </form>
     </div>
+    {% endblock %}
 </body>
 </html>
