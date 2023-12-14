@@ -1,5 +1,5 @@
 from flask import Flask, Blueprint, render_template, redirect, url_for, send_from_directory, request, flash
-from werkzeug.security import generate_password_hash
+from werkzeug.security import generate_password_hash, check_password_hash
 from flask import Blueprint
 from .models import User
 from app import db
@@ -15,9 +15,12 @@ def login_page():
 
 		user = User.query.filter_by(username=username).first()
 
-		if user and user.check_password(password):
-			flash('Login Successful!', 'success')
+		if not user or not check_password_hash(user.password, password):
+			flash('Login Invalid! Try again.')
+			return redirect(url_for('auth.login_page'))
+		else:
 			return redirect(url_for('main.landing_page'))
+      
 	return render_template('/auth/login.html')
 
 #registration
