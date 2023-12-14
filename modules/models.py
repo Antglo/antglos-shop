@@ -1,5 +1,5 @@
 from werkzeug.security import generate_password_hash, check_password_hash
-import db
+from app import db
 
 class User(db.Model):
 	#class to generate user accounts; append username and hash to schema

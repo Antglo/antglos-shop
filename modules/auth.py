@@ -1,17 +1,24 @@
 from flask import Flask, Blueprint, render_template, redirect, url_for, send_from_directory, request, flash
 from flask import Blueprint
 from .models import User
-from .. import db
+from app import db
 
 auth = Blueprint('auth', __name__)
 
-@auth.route('/login')
-def login():
-    return 'login'
-    
-@auth.route('/register')
-def register():
-    return 'Register'
+#route login
+@auth.route('/login', methods=['GET', 'POST'])
+def login_page():
+	if request.method == 'POST':
+		username = request.form.get('username')
+		password = request.form.get('password')
+
+		user = User.query.filter_by(username=username).first()
+
+		if user and user.check_password(password):
+			flash('Login Successful!', 'success')
+			return redirect(url_for('landing_page'))
+	return render_template('/auth/login.html')
+
 #registration
 @auth.route('/register', methods=['GET', 'POST'])
 def register():
