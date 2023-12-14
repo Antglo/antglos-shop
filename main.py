@@ -1,8 +1,6 @@
-#main/init
-
 from flask import Flask, Blueprint, render_template, redirect, url_for, send_from_directory, request, flash
 from . import db
-from .models import User
+from modules.models import User
 
 main = Blueprint('main', __name__)
 
