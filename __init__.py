@@ -13,6 +13,10 @@ def create_app():
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     
     db.init_app(app)
+
+    with app.app_context():
+        from .models import User
+        db.create_all()
     
     #Blueprint for auth routes
     from .auth import auth as auth_blueprint
