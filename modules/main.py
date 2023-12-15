@@ -1,6 +1,6 @@
 #main/init
-
-from flask import Flask, Blueprint, render_template, redirect, url_for, send_from_directory, request, flash
+from flask_login import current_user
+from flask import Blueprint, render_template, send_from_directory
 
 main = Blueprint('main', __name__)
 
@@ -8,7 +8,10 @@ main = Blueprint('main', __name__)
 @main.route('/')
 def landing_page():
 	#items = Item.query.all()
-	return render_template('landing.html')
+	if current_user == None:
+		return render_template('landing.html')
+	else:
+		return render_template('landing.html', name=current_user.username)
 
 #route look/images
 @main.route('/look/<path:filename>')

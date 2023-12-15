@@ -1,4 +1,5 @@
 from flask import Flask, Blueprint, render_template, redirect, url_for, send_from_directory, request, flash
+from flask_login import login_user
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask import Blueprint
 from .models import User
@@ -19,6 +20,7 @@ def login_page():
 			flash('Login Invalid! Try again.')
 			return redirect(url_for('auth.login_page'))
 		else:
+			login_user(user, remember=True) #creates a session for the logged in user
 			return redirect(url_for('main.landing_page'))
       
 	return render_template('/auth/login.html')
