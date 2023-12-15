@@ -4,19 +4,31 @@
 <html>
 <head>
     <title>Shoe Shop - Login</title>
-    <link rel="stylesheet" href="/static/css/login.css">
+    <link rel="stylesheet" href="/static/css/register.css">
 </head>
 <body>
     {% extends "nav.html" %}
 
     {% block content %}
-    <h1>Login</h1>
+    <h1 class="title">Login</h1>
     <form action="/login" method="POST">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required><br><br>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required><br><br>
-        <input type="submit" value="Login">
+        <div class="field">
+            <input 
+                type="text" 
+                name="username"
+                placeholder="Username"
+            >
+        </div>
+        <div class="field">
+            <input 
+                type="password" 
+                name="password"
+                placeholder="Password"
+            >
+        </div>
+        <div class="field">
+            <button class="submit_button">Submit</button>
+        </div>
     </form>
     {% endblock %}
 </body>
