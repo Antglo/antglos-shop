@@ -35,15 +35,15 @@ input {
     height: 2rem;
 }
 
-button {
+button.submit_button {
     color: var(--btn-text);
     background-color: var(--btn-bg);
     font-weight: bold;
-    width: 100%;
+    width: 200px; /* Adjust the width value as needed */
     height: 2rem;
     outline: 0;
     padding: 0.5rem;
     border: none;
     border-radius: 7px;
     background-color: var(--btn);
-}
+    margin: 0 auto; /* Add this line to center the button horizontally */
