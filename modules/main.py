@@ -8,10 +8,10 @@ main = Blueprint('main', __name__)
 @main.route('/')
 def landing_page():
 	#items = Item.query.all()
-	if current_user == None:
-		return render_template('landing.html')
-	else:
+	if current_user.is_authenticated:
 		return render_template('landing.html', name=current_user.username)
+	else:
+		return render_template('landing.html')
 
 #route look/images
 @main.route('/look/<path:filename>')
