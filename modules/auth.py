@@ -1,5 +1,5 @@
 from flask import Flask, Blueprint, render_template, redirect, url_for, send_from_directory, request, flash
-from flask_login import login_user
+from flask_login import login_user, login_required, logout_user
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask import Blueprint
 from .models import User
@@ -61,5 +61,7 @@ def register():
 		return render_template('/auth/register.html')
 
 @auth.route('/logout')
+@login_required
 def logout():
-    return 'logout'
+    logout_user()
+    return redirect(url_for('auth.login_page'))
