@@ -10,7 +10,8 @@ class User(UserMixin, db.Model):
 	username = db.Column(db.String(30), unique=True, nullable=False)
 	password = db.Column(db.String(128), nullable=False)
 
-# class Shoes(db.Model):
-# 	id = db.Column(db.Integer, primary_key=True)
-# 	price = db.Column(db.DECIMAL(10, 2), nullable=False)
-# 	size = db.Column(db.Integer, nullable=False)
+class Cord(db.Model):
+	'''Class to sell my friends'''
+	id = db.Column(db.Integer, primary_key=True)
+	price = db.Column(db.DECIMAL(10, 2), nullable=False)
+	desc = db.Column(db.String(500), nullable=True)
