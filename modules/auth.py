@@ -1,7 +1,6 @@
-from flask import Flask, Blueprint, render_template, redirect, url_for, send_from_directory, request, flash
-from flask_login import login_user, login_required, logout_user
+from flask import Blueprint, render_template, redirect, url_for, request, flash
+from flask_login import login_user, login_required, logout_user, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
-from flask import Blueprint
 from .models import User
 from app import db
 
@@ -25,10 +24,6 @@ def login_page():
       
 	return render_template('/auth/login.html')
 
-#registration
-# @auth.route('/register')
-# def register_load():
-#     return render_template('register.html')
 @auth.route('/register', methods=['GET', 'POST'])
 def register():
 	'''function for registration logic; registration success/fail'''
@@ -59,6 +54,19 @@ def register():
 		return redirect(url_for('auth.login_page'))
 	else:
 		return render_template('/auth/register.html')
+
+@auth.route('/admin/admin_page')
+def administrator():
+    '''Only seen by administrator accounts'''
+    # admin = User.query.filter(User.id == 4).first()
+    # print(admin)
+    # print(current_user)
+    
+    if current_user.is_superuser:
+        return ('You are admin!')
+    else:
+        return ('Please validate yourself!')
+    #return ('administrator')
 
 @auth.route('/logout')
 @login_required

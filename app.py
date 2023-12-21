@@ -1,7 +1,9 @@
 import os
-from flask import Flask
+from flask import Flask, session
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
+from flask.cli import with_appcontext
+import click
 
 #init SQLAlchemy to use later
 db = SQLAlchemy()
@@ -23,12 +25,25 @@ def create_app():
     
 
     with app.app_context():
-        from modules.models import User
         db.create_all()
+
     #user_loader creates/checks callbacks for user session in relation to the users ID
+    from modules.models import User
     @login_manager.user_loader
     def load_user(user_id):
         return User.query.get(int(user_id))
+    
+    #create superusers from CLI
+    @click.command(name="createsuperuser")
+    @with_appcontext
+    @click.argument("username", nargs=1)
+    @click.argument("password", nargs=1)
+    def create_superuser(username, password):
+        '''Using click use the arguments to create a superuser'''
+        user = User(username=username, password=password, is_superuser=True)
+        db.session.add(user)
+        db.session.commit()
+    app.cli.add_command(create_superuser)
     
     #Blueprint for auth routes
     from modules.auth import auth as auth_blueprint
@@ -37,5 +52,9 @@ def create_app():
     #Blueprint for non-auth parts of app
     from modules.main import main as main_blueprint
     app.register_blueprint(main_blueprint)
+    
+    #Blueprint for basket API/shopping basket
+    # from modules.basket import basket as shopping_basket
+    # app.register_blueprint(shopping_basket)
     
     return app
