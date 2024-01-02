@@ -4,7 +4,7 @@ from flask_admin import Admin, AdminIndexView
 from flask_admin.contrib.fileadmin import FileAdmin
 from flask_admin.form import SecureForm, ImageUploadField
 from flask_admin.contrib.sqla import ModelView
-#import PIL
+import PIL
 
 from wtforms.meta import DefaultMeta
 from flask_wtf.csrf import _FlaskFormCSRF
