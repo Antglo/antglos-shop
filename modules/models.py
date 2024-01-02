@@ -17,3 +17,4 @@ class Cord(db.Model):
 	name = db.Column(db.String(30), unique=True, nullable=False)
 	price = db.Column(db.DECIMAL(10, 2), nullable=False)
 	desc = db.Column(db.String(500), nullable=True)
+	image = db.Column(db.String(128), nullable=True, unique=True)

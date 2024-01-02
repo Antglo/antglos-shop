@@ -1,10 +1,10 @@
-import app
-from app import db
+from app import app, db
 
 from flask_admin import Admin, AdminIndexView
 from flask_admin.contrib.fileadmin import FileAdmin
 from flask_admin.form import SecureForm, ImageUploadField
 from flask_admin.contrib.sqla import ModelView
+#import PIL
 
 from wtforms.meta import DefaultMeta
 from flask_wtf.csrf import _FlaskFormCSRF
@@ -14,7 +14,7 @@ from flask_login import current_user
 
 import os
 
-admin = Blueprint('admin', __name__)
+admin = Blueprint('shopadmin', __name__)
 
 app.config['FLASK_ADMIN_SWATCH'] = 'yeti'
 
@@ -48,8 +48,8 @@ class CordAdmin(ModelView):
     form_columns = ['id', 'name', 'price', 'desc', 'image']
     page_size = 15
     column_searchable_list = ['name', 'price']
-    column_filters = ['category.name', 'price']
-    column_editable_list = ['name', 'category', 'name', 'price', 'desc', 'image']
+    column_filters = ['name', 'price']
+    column_editable_list = ['name', 'name', 'price', 'desc', 'image']
     can_view_details = True
 
     form_extra_fields = {
@@ -72,6 +72,9 @@ class CordAdmin(ModelView):
     
     def inaccessible_callback(self, name, **kwargs):
         return redirect('/')
+#Adding views to display in admin panel
+usr_admin.add_view(CordAdmin(Cord, db.session))
+
 
 # @admin.route('/admin')
 # def administrator():
