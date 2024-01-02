@@ -55,19 +55,6 @@ def register():
 	else:
 		return render_template('/auth/register.html')
 
-@auth.route('/admin/admin_page')
-def administrator():
-    '''Only seen by administrator accounts'''
-    # admin = User.query.filter(User.id == 4).first()
-    # print(admin)
-    # print(current_user)
-    
-    if current_user.is_superuser:
-        return ('You are admin!')
-    else:
-        return ('Please validate yourself!')
-    #return ('administrator')
-
 @auth.route('/logout')
 @login_required
 def logout():

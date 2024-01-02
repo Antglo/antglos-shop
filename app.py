@@ -3,6 +3,7 @@ from flask import Flask, session
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 from flask.cli import with_appcontext
+from werkzeug.security import generate_password_hash
 import click
 
 #init SQLAlchemy to use later
@@ -40,10 +41,14 @@ def create_app():
     @click.argument("password", nargs=1)
     def create_superuser(username, password):
         '''Using click use the arguments to create a superuser'''
-        user = User(username=username, password=password, is_superuser=True)
+        user = User(username=username, password=generate_password_hash(password, method='pbkdf2:sha256'), is_superuser=True)
         db.session.add(user)
         db.session.commit()
     app.cli.add_command(create_superuser)
+
+    #Blueprint for admin
+    from modules.admin import admin as admin_blueprint
+    app.register_blueprint(admin_blueprint)
     
     #Blueprint for auth routes
     from modules.auth import auth as auth_blueprint
