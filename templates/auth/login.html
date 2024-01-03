@@ -1,5 +1,6 @@
 <!-- templates/auth/login.html -->
-
+{% extends "nav.html" %}
+{% block content %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,9 +9,6 @@
     <link rel="stylesheet" href="/static/css/scrollbar.css">
 </head>
 <body>
-    {% extends "nav.html" %}
-
-    {% block content %}
     <h1 class="title">Login</h1>
     <form action="/login" method="POST">
         <div class="field">
@@ -22,7 +20,7 @@
         </div>
         <div class="field">
             <input 
-                type="password" 
+                type="password"
                 name="password"
                 placeholder="Password"
             >
@@ -31,6 +29,6 @@
             <button class="submit_button">Submit</button>
         </div>
     </form>
-    {% endblock %}
 </body>
 </html>
+{% endblock %}

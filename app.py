@@ -17,6 +17,7 @@ def create_app():
     app.config['SECRET_KEY'] = 'secret'
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(app.root_path, 'db/schema.db')
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    app.config['WTF_CSRF_ENABLED'] = True
     
     db.init_app(app)
     
@@ -58,9 +59,9 @@ def create_app():
     #Blueprint for non-auth parts of app
     from modules.main import main as main_blueprint
     app.register_blueprint(main_blueprint)
-    
-    #Blueprint for basket API/shopping basket
-    # from modules.basket import basket as shopping_basket
-    # app.register_blueprint(shopping_basket)
-    
+
+    #CSRF
+    # from flask_wtf.csrf import CSRFProtect
+    # csrf = CSRFProtect(app)
+
     return app

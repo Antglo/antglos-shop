@@ -31,7 +31,7 @@ try:
 except OSError:
     pass
 
-from modules.models import Cord
+from modules.models import Category, Cord, User
 
 class CustomSecureForm(SecureForm):
     class Meta(DefaultMeta):
@@ -42,6 +42,16 @@ class CustomSecureForm(SecureForm):
         def csrf_secret(self):
             return current_app.config.get('WTF_CSRF_SECRET_KEY',
                                           current_app.secret_key)
+
+class UserAdmin(ModelView):
+    column_searchable_list = ('username',)
+    column_filters = ('username', 'password')
+    
+    def is_accessible(self):
+        return True if current_user.is_superuser else False
+    
+    def inaccessible_callback(self, name, **kwargs):
+        return redirect('/')
 
 class CordAdmin(ModelView):
     form_base_class = CustomSecureForm
@@ -73,15 +83,5 @@ class CordAdmin(ModelView):
     def inaccessible_callback(self, name, **kwargs):
         return redirect('/')
 #Adding views to display in admin panel
+usr_admin.add_view(UserAdmin(User, db.session, category='Menu'))
 usr_admin.add_view(CordAdmin(Cord, db.session))
-
-
-# @admin.route('/admin')
-# def administrator():
-#     '''Only seen by administrator accounts'''
-    
-#     if current_user.is_superuser:
-#         return ('You are admin!')
-#     else:
-#         return ('Please validate yourself!')
-#     #return ('administrator')

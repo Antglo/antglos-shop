@@ -13,7 +13,7 @@
     <h1 class="display-4">Login</h1>
     <p class="lead">Security Is Not For the Passive.</p>
     <hr class="my-4">
-    <p>You're not logged in as an Administrative user. Please login.</p>
+    <p>You're not logged in as an Administrative user. <a href="{{ url_for('auth.login_page')}}">Please login</a>.</p>
 </div>
 {% endif %}
 {% endblock %}
