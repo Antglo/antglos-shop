@@ -32,6 +32,14 @@ Switch to the Shop_Framework branch using:
 
 Now, you're all set to explore the amazing features of the Shop_Framework!
 
+### Creating a Superuser
+
+To create a superuser, navigate to the main folder (antglos_shop) and run the following command in the terminal:
+
+```flask createsuperuser (username) (password)```
+
+Replace `(username)` and `(password)` with your desired superuser credentials.
+
 ## Project Progress
 
 ![Progress Bar](https://camo.githubusercontent.com/e2e83a63f4c01bd8be27ef6ee57e0f97dbe77ca66de609e8f60e466f389fc582/68747470733a2f2f676570732e6465762f70726f67726573732f3735)
