@@ -24,7 +24,7 @@ class DashboardView(AdminIndexView):
 
 usr_admin = Admin(app, name='Shop Admin', template_mode='bootstrap4', index_view=DashboardView())
 
-upload_path = os.path.join(os.path.dirname(__file__), 'look/')
+upload_path = os.path.join(os.path.dirname(__file__), '..', 'look')
 
 try:
     os.mkdir(upload_path)
@@ -55,7 +55,7 @@ class UserAdmin(ModelView):
 
 class CordAdmin(ModelView):
     form_base_class = CustomSecureForm
-    form_columns = ['id', 'name', 'price', 'desc', 'image']
+    form_columns = ['name', 'price', 'desc', 'image']
     page_size = 15
     column_searchable_list = ['name', 'price']
     column_filters = ['name', 'price']
@@ -82,6 +82,17 @@ class CordAdmin(ModelView):
     
     def inaccessible_callback(self, name, **kwargs):
         return redirect('/')
+    
+class MetaAdmin(FileAdmin):
+    '''Allows for the CSRF action to occur'''
+    form_base_class = CustomSecureForm
+    
+    def is_accessible(self):
+        return True if current_user.is_superuser else False
+    
+    def inaccessible_callback(self, name, **kwargs):
+        return redirect('/')
+
 #Adding views to display in admin panel
 usr_admin.add_view(UserAdmin(User, db.session, category='Menu'))
 usr_admin.add_view(CordAdmin(Cord, db.session))

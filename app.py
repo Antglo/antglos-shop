@@ -11,7 +11,7 @@ db = SQLAlchemy()
 
 def create_app():
     global app
-    app = Flask(__name__)
+    app = Flask(__name__, static_folder='look/')
     
     #configure database sqlite
     app.config['SECRET_KEY'] = 'secret'
@@ -61,7 +61,10 @@ def create_app():
     app.register_blueprint(main_blueprint)
 
     #CSRF
-    # from flask_wtf.csrf import CSRFProtect
-    # csrf = CSRFProtect(app)
+    from flask_wtf.csrf import CSRFProtect
+    csrf = CSRFProtect(app)
+    ###THIS WILL SPOIL THE REASON I MADE THIS WEBAPP IGNORE IF YOU WANT\
+        # TO CHALLENGE YOUR SKILLS
+    csrf.exempt(auth_blueprint)
 
     return app
