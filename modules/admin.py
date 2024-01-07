@@ -43,6 +43,14 @@ class CustomSecureForm(SecureForm):
             return current_app.config.get('WTF_CSRF_SECRET_KEY',
                                           current_app.secret_key)
 
+class CategoryAdmin(ModelView):
+    form_base_class = CustomSecureForm
+    form_columns = ['name', 'slug']
+    column_searchable_list = ['name']
+    column_filters = ['name']
+    form_excluded_columns = ['cords']
+    edit_modal = True
+
 class UserAdmin(ModelView):
     column_searchable_list = ('username',)
     column_filters = ('username', 'password')

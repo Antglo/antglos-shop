@@ -21,10 +21,10 @@ class Category(db.Model):
 class Cord(db.Model):
 	'''Class to sell my friends'''
 	id = db.Column(db.Integer, primary_key=True)
-	category_id = db.Column(db.Integer, db.ForeignKey('category.id', ondelete='CASCADE'), nullable=False, unique=False)
+	category_id = db.Column(db.Integer, db.ForeignKey('category.id', ondelete='CASCADE'), nullable=True, unique=False)
 	category = db.relationship('Category', back_populates='cords')
 	name = db.Column(db.String(30), unique=True, nullable=False)
-	slug = db.Column(db.String(300), nullable=False, unique=True)
+	slug = db.Column(db.String(300), nullable=True, unique=True)
 	price = db.Column(db.DECIMAL(10, 2), nullable=False)
 	desc = db.Column(db.String(500), nullable=True)
 	image = db.Column(db.String(128), nullable=True, unique=True)

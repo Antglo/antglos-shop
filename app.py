@@ -11,13 +11,12 @@ db = SQLAlchemy()
 
 def create_app():
     global app
-    app = Flask(__name__, static_folder='look/')
+    app = Flask(__name__)
     
     #configure database sqlite
     app.config['SECRET_KEY'] = 'secret'
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(app.root_path, 'db/schema.db')
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-    app.config['WTF_CSRF_ENABLED'] = True
     
     db.init_app(app)
     
@@ -63,8 +62,7 @@ def create_app():
     #CSRF
     from flask_wtf.csrf import CSRFProtect
     csrf = CSRFProtect(app)
-    ###THIS WILL SPOIL THE REASON I MADE THIS WEBAPP IGNORE IF YOU WANT\
-        # TO CHALLENGE YOUR SKILLS
+    #VULNERABLE
     csrf.exempt(auth_blueprint)
 
     return app

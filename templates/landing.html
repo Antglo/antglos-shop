@@ -34,6 +34,11 @@
     {% extends "nav.html" %}
     {% block content %}
     <h1 class="title">Welcome {{ name }}</h1>
+    <div class="column">
+        {% for product in cordproduct %}
+            {% include 'corditem.html' %}
+        {% endfor %}
+    </div>
     <div class="shoe-grid">
         <div>
             <img class="shoe-image" src="look/shoe1.jpg" alt="Shoe 1">
