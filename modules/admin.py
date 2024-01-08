@@ -63,7 +63,7 @@ class UserAdmin(ModelView):
 
 class CordAdmin(ModelView):
     form_base_class = CustomSecureForm
-    form_columns = ['name', 'price', 'desc', 'image']
+    form_columns = ['name','slug', 'price', 'desc', 'image']
     page_size = 15
     column_searchable_list = ['name', 'price']
     column_filters = ['name', 'price']

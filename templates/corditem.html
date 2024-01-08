@@ -1,16 +1,13 @@
 <div class="column col-3 col-md-4 col-sm-6 mb-2">
     <div class="card">
-      {% if cord.image %}
+      {% if cordproduct.image %}
         <div class="card-image">
-          <img loading="lazy" class="img-fit-cover img-responsive aspect-ratio" src="{{url_for('static', filename=cord.image)}}">
+          <img loading="lazy" class="img-fit-cover img-responsive aspect-ratio" src="{{url_for('static', filename=cordproduct.image)}}">
         </div>
       {% endif %}
       <div class="card-header">
-        <div class="card-title h5 text-ellipsis">{{cord.name}}</div>
-        <small><Strong>Rs. {{cord.price}}</Strong></small>
+        <div class="card-title h5 text-ellipsis">{{cordproduct.name}}</div>
+        <small><Strong>Rs. {{cordproduct.price}}</Strong></small>
       </div>
-      <!-- <div class="card-footer">
-        <a href="{{url_for('shop.details', slug=cord.slug)}}" class="btn btn-primary">Details</a>
-      </div> -->
     </div>
   </div>

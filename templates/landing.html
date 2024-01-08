@@ -35,27 +35,9 @@
     {% block content %}
     <h1 class="title">Welcome {{ name }}</h1>
     <div class="column">
-        {% for product in cordproduct %}
+        {% for cord in cordproduct %}
             {% include 'corditem.html' %}
         {% endfor %}
-    </div>
-    <div class="shoe-grid">
-        <div>
-            <img class="shoe-image" src="look/shoe1.jpg" alt="Shoe 1">
-            <button class="add-to-cart-button">ADD TO CART</button>
-        </div>
-        <div>
-            <img class="shoe-image" src="look/shoe2.jpg" alt="Shoe 2">
-            <button class="add-to-cart-button">ADD TO CART</button>
-        </div>
-        <div>
-            <img class="shoe-image" src="look/shoe3.jpg" alt="Shoe 3">
-            <button class="add-to-cart-button">ADD TO CART</button>
-        </div>
-        <div>
-            <img class="shoe-image" src="look/shoe4.jpg" alt="Shoe 4">
-            <button class="add-to-cart-button">ADD TO CART</button>
-        </div>
     </div>
     {% endblock %}
 </body>
