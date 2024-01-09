@@ -13,8 +13,10 @@
 <body>
     {% extends "nav.html" %}
     {% block content %}
-    <h1 class="title">Welcome {{ name }}</h1>
-    <div>
+    <header>
+        <h1>Welcome {{ name }}</h1>
+    </header>
+    <div class="shoe-grid">
         <div class="shoe">
             <h2>Shoe1</h2>
             <img src="look/shoe1.jpg" alt="Shoe 1">

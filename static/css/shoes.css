@@ -1,61 +1,24 @@
 /* static/css/shoes.css */
 
-/* Reset default styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Lato', sans-serif; /* Updated font */
-}
-
-/* Body styles */
-body {
-    background-color: #FAFAFA;
-}
-
 /* Header styles */
 header {
-    background-color: #5D4037; /* Updated color */
+    background-color: #7e7e7e;
     color: #FFFFFF;
     padding: 20px;
     text-align: center;
 }
 
 header h1 {
-    font-size: 28px; /* Increased size */
+    font-size: 28px; 
     font-weight: 700;
 }
 
-/* Navigation styles */
-nav {
-    background-color: #795548; /* Updated color */
-    padding: 10px 0;
-}
-
-nav ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: space-around; /* Updated alignment */
-}
-
-nav ul li a {
-    color: #FFFFFF;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease; /* Added transition */
-}
-
-nav ul li a:hover {
-    color: #D7CCC8; /* Added hover effect */
-}
-
-/* Main styles */
-main {
-    padding: 20px;
-    text-align: center; /* Centered content */
-}
-
 /* Shoe styles */
+.shoe-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+}
 .shoe {
     display: flex;
     flex-direction: column;
@@ -63,17 +26,17 @@ main {
     background-color: #7e7e7e;
     padding: 20px;
     margin: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
-    transition: box-shadow 0.3s ease; /* Added transition */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease; 
 }
  
 .shoe:hover {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Hover effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); 
 }
 
 .shoe img {
     width: 100%;
-    max-width: 300px; /* Responsive image */
+    max-width: 300px;
     height: auto;
     margin-bottom: 15px;
 }
