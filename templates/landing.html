@@ -1,44 +1,33 @@
 <!-- landing.html -->
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Antglos Shop</title>
-    <style>
-        .shoe-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-gap: 20px;
-        }
-
-        .shoe-image {
-            width: 100%;
-            height: 35rem;
-        }
-
-        .add-to-cart-button {
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: white;
-            font-size: 18px;
-            border: none;
-            cursor: pointer;
-        }
-    </style>
     <link rel="stylesheet" href="/static/css/auth.css">
-    <link rel="stylesheet" href="/static/css/scrollbar.css"
+    <link rel="stylesheet" href="/static/css/scrollbar.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
 </head>
 
-<body>
-    {% extends "nav.html" %}
-    {% block content %}
-    <h1 class="title">Welcome {{ name }}</h1>
-    <div class="column">
-        {% for cord in cordproduct %}
-            {% include 'corditem.html' %}
-        {% endfor %}
-    </div>
-    {% endblock %}
-</body>
+{% extends "nav.html" %}
+
+{% block content %}
+    <body>
+        <div class="container">
+            <h1 class="title">Welcome {{ name }}</h1>
+            <div class="row">
+                {% for cord in cordproduct %}
+                    <div class="col-md-3">
+                        {% include 'corditem.html' %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </body>
+{% endblock %}
+
 </html>
