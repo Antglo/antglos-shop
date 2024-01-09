@@ -5,52 +5,54 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Lato', sans-serif; /* Updated font */
 }
 
 /* Body styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
+    background-color: #FAFAFA;
 }
 
 /* Header styles */
 header {
-    background-color: #333;
-    color: #fff;
+    background-color: #5D4037; /* Updated color */
+    color: #FFFFFF;
     padding: 20px;
     text-align: center;
 }
 
 header h1 {
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 28px; /* Increased size */
+    font-weight: 700;
 }
 
 /* Navigation styles */
 nav {
-    background-color: #222;
-    padding: 10px;
+    background-color: #795548; /* Updated color */
+    padding: 10px 0;
 }
 
 nav ul {
     list-style-type: none;
     display: flex;
-    justify-content: center;
-}
-
-nav ul li {
-    margin: 0 10px;
+    justify-content: space-around; /* Updated alignment */
 }
 
 nav ul li a {
-    color: #fff;
+    color: #FFFFFF;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 500;
+    transition: color 0.3s ease; /* Added transition */
+}
+
+nav ul li a:hover {
+    color: #D7CCC8; /* Added hover effect */
 }
 
 /* Main styles */
 main {
     padding: 20px;
+    text-align: center; /* Centered content */
 }
 
 /* Shoe styles */
@@ -58,38 +60,43 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #fff;
+    background-color: #7e7e7e;
     padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+    transition: box-shadow 0.3s ease; /* Added transition */
+}
+ 
+.shoe:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Hover effect */
 }
 
 .shoe img {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    margin-bottom: 10px;
+    width: 100%;
+    max-width: 300px; /* Responsive image */
+    height: auto;
+    margin-bottom: 15px;
 }
 
 .shoe h2 {
-    font-size: 18px;
-    margin-bottom: 10px;
+    font-size: 20px;
+    color: #000000; /* Color update */
 }
 
 .shoe p {
-    font-size: 14px;
-    color: #777;
-    margin-bottom: 10px;
+    font-size: 16px;
+    color: #757575;
 }
 
 .shoe button {
-    background-color: #333;
-    color: #fff;
-    padding: 8px 16px;
+    background-color: #5D4037;
+    color: #FFFFFF;
+    padding: 10px 20px;
     border: none;
     cursor: pointer;
+    transition: background-color 0.3s ease; /* Added transition */
 }
 
 .shoe button:hover {
-    background-color: #222;
+    background-color: #3E2723; /* Hover effect */
 }

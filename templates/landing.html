@@ -2,56 +2,44 @@
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Antglos Shop</title>
-    <style>
-        .shoe-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-gap: 20px;
-        }
-
-        .shoe-image {
-            width: 100%;
-            height: 35rem;
-        }
-
-        .add-to-cart-button {
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: white;
-            font-size: 18px;
-            border: none;
-            cursor: pointer;
-        }
-    </style>
     <link rel="stylesheet" href="/static/css/auth.css">
-    <link rel="stylesheet" href="/static/css/scrollbar.css"
+    <link rel="stylesheet" href="/static/css/scrollbar.css">
+    <link rel="stylesheet" href="/static/css/shoes.css">
 </head>
 
 <body>
     {% extends "nav.html" %}
     {% block content %}
     <h1 class="title">Welcome {{ name }}</h1>
-    <div class="shoe-grid">
-        <div>
-            <img class="shoe-image" src="look/shoe1.jpg" alt="Shoe 1">
-            <button class="add-to-cart-button">ADD TO CART</button>
+    <div>
+        <div class="shoe">
+            <h2>Shoe1</h2>
+            <img src="look/shoe1.jpg" alt="Shoe 1">
+            <button>ADD TO CART</button>
         </div>
-        <div>
-            <img class="shoe-image" src="look/shoe2.jpg" alt="Shoe 2">
-            <button class="add-to-cart-button">ADD TO CART</button>
+        <div class="shoe">
+            <h2>Shoe2</h2>
+            <img src="look/shoe2.jpg" alt="Shoe 2">
+            <button>ADD TO CART</button>
         </div>
-        <div>
-            <img class="shoe-image" src="look/shoe3.jpg" alt="Shoe 3">
-            <button class="add-to-cart-button">ADD TO CART</button>
+
+        <div class="shoe">
+            <h2>Shoe3</h2>
+            <img src="look/shoe3.jpg" alt="Shoe 3">
+            <button>ADD TO CART</button>
         </div>
-        <div>
-            <img class="shoe-image" src="look/shoe4.jpg" alt="Shoe 4">
-            <button class="add-to-cart-button">ADD TO CART</button>
+
+        <div class="shoe">
+            <h2>Shoe4</h2>
+            <img src="look/shoe4.jpg" alt="Shoe 4">
+            <button >ADD TO CART</button>
         </div>
+
     </div>
     {% endblock %}
 </body>
+
 </html>
