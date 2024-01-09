@@ -10,7 +10,7 @@ main = Blueprint('main', __name__)
 @main.route('/')
 def landing_page():
 	#items = Item.query.all()
-	cordproduct = Cord.query.all()
+	cordproduct = Cord.query.all()[:5]
 	if current_user.is_authenticated:
 		return render_template('landing.html', name=current_user.username, cordproduct=cordproduct)
 	else:
