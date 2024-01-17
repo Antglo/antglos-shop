@@ -28,6 +28,34 @@ class Cord(db.Model):
 	price = db.Column(db.DECIMAL(10, 2), nullable=False)
 	desc = db.Column(db.String(500), nullable=True)
 	image = db.Column(db.String(128), nullable=True, unique=True)
+	order_items = db.relationship('OrderItem', back_populates='cordproducts')
 
 	def __repr__(self):
 		return f'id: {self.id} - Name: {self.name} - ${self.price}'
+	
+class Order(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    full_name = db.Column(db.String(30), nullable=False, unique=False)
+    email_address = db.Column(db.String(100), nullable=False, unique=False)
+    city = db.Column(db.String(50), nullable=False, unique=False)
+    postal_code = db.Column(db.Integer(), nullable=False, unique=False)
+    state = db.Column(db.String(50), nullable=False, unique=False)
+    phone_no = db.Column(db.Integer(), nullable=False, unique=False)
+    items = db.relationship('OrderItem', back_populates='order', cascade='all, delete, delete-orphan')
+    total_amount = db.Column(db.Integer(), nullable=False, unique=False)
+
+    def __repr__(self):
+        return self.full_name + ' - ' + self.email_address + ' - ' + self.created_at
+    
+
+
+class OrderItem(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    order_id = db.Column(db.Integer, db.ForeignKey('order.id', ondelete='CASCADE'), nullable=False, unique=False)
+    product_id = db.Column(db.Integer, db.ForeignKey('cord.id', ondelete='CASCADE'), nullable=False, unique=False)
+    cordproducts = db.relationship('Cord', back_populates='order_items')
+    quantity = db.Column(db.Integer(), nullable=False, unique=False)
+    order = db.relationship('Order', back_populates='items')
+
+    def __repr__(self):
+        return f'Order id:{self.order_id} - CordProduct: {self.cordproducts.name}'
