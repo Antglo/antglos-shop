@@ -97,7 +97,7 @@ class OrderAdmin(ModelView):
     form_columns = ['full_name', 'email_address', 'city', 'postal_code', 'state', 'phone_no', 'total_amount']
     column_searchable_list = ['full_name', 'email_address', 'phone_no', 'total_amount']
     can_export = True
-    inline_models = [OrderItem]
+    #inline_models = [OrderItem]
     can_delete = False
     can_view_details = True
 
