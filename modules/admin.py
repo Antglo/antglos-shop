@@ -31,7 +31,7 @@ try:
 except OSError:
     pass
 
-from modules.models import Category, Cord, User
+from modules.models import Cord, User, Order, OrderItem
 
 class CustomSecureForm(SecureForm):
     class Meta(DefaultMeta):
@@ -91,6 +91,22 @@ class CordAdmin(ModelView):
     def inaccessible_callback(self, name, **kwargs):
         return redirect('/')
     
+class OrderAdmin(ModelView):
+    form_base_class = CustomSecureForm
+    page_size = 15
+    form_columns = ['full_name', 'email_address', 'city', 'postal_code', 'state', 'phone_no', 'total_amount']
+    column_searchable_list = ['full_name', 'email_address', 'phone_no', 'total_amount']
+    can_export = True
+    inline_models = [OrderItem]
+    can_delete = False
+    can_view_details = True
+
+    def is_accessible(self):
+        return True if current_user.is_superuser else False
+    
+    def inaccessible_callback(self, name, **kwargs):
+        return redirect('/')
+    
 class MetaAdmin(FileAdmin):
     '''Allows for the CSRF action to occur'''
     form_base_class = CustomSecureForm
@@ -104,3 +120,4 @@ class MetaAdmin(FileAdmin):
 #Adding views to display in admin panel
 usr_admin.add_view(UserAdmin(User, db.session, category='Menu'))
 usr_admin.add_view(CordAdmin(Cord, db.session))
+usr_admin.add_view(OrderAdmin(Order, db.session))
