@@ -1,16 +1,19 @@
+<!-- template/auth/regester.html -->
+    {% extends "nav.html" %}
+
+    {% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Antglos Shop - User Registration</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="/static/css/auth.css">
     <link rel="stylesheet" href="/static/css/scrollbar.css">
 </head>
-<body class="register-page">
-    {% extends "nav.html" %}
-    {% block content %}
-    <div class="grid">
+<body>
+    <section class="custom-section">
         {% with messages = get_flashed_messages() %}
         {% if messages %}
         <div class="notification is-danger">
@@ -38,10 +41,7 @@
                 <button class="submit_button">Submit</button>
             </div>
         </form>
-        
-        
-        </form>
-    </div>
-    {% endblock %}
+    </section>
 </body>
 </html>
+{% endblock %}

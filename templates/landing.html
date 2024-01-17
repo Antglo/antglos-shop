@@ -1,5 +1,7 @@
 <!-- landing.html -->
+{% extends "nav.html" %}
 
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,43 +9,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Antglos Shop</title>
-    <link rel="stylesheet" href="/static/css/auth.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="/static/css/scrollbar.css">
-    <link rel="stylesheet" href="/static/css/shoes.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
 </head>
 
-<body>
-    {% extends "nav.html" %}
-    {% block content %}
-    <header>
-        <h1>Welcome {{ name }}</h1>
-    </header>
-    <div class="shoe-grid">
-        <div class="shoe">
-            <h2>Shoe1</h2>
-            <img src="look/shoe1.jpg" alt="Shoe 1">
-            <button>ADD TO CART</button>
-        </div>
-        <div class="shoe">
-            <h2>Shoe2</h2>
-            <img src="look/shoe2.jpg" alt="Shoe 2">
-            <button>ADD TO CART</button>
-        </div>
 
-        <div class="shoe">
-            <h2>Shoe3</h2>
-            <img src="look/shoe3.jpg" alt="Shoe 3">
-            <button>ADD TO CART</button>
+    <body>
+        <div class="card-container">
+            <h1 class="title">Welcome {{ name }}</h1>
+            <div class="row">
+                {% for cord in cordproduct %}
+                    <div class="col-md-3">
+                        {% include 'corditem.html' %}
+                    </div>
+                {% endfor %}
+            </div>
         </div>
+    </body>
 
-        <div class="shoe">
-            <h2>Shoe4</h2>
-            <img src="look/shoe4.jpg" alt="Shoe 4">
-            <button >ADD TO CART</button>
-        </div>
-
-    </div>
-    {% endblock %}
-</body>
 
 </html>
+{% endblock %}

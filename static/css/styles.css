@@ -5,7 +5,7 @@ html {
 }
 body {
     height: 100%;
-    background-color: #2a1b2b;
+    background-color: #2c3338;
     color: #fff;
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -13,7 +13,7 @@ body {
     overflow-y: scroll;
 }
 
-.container {
+.card-container {
     padding: 1rem; /* 20px */
 }
 
@@ -51,4 +51,13 @@ body {
 .card-price small strong {
     color: #4caf50;
     font-size: 1.2rem; /* 1.2 times the base font size */
+}
+
+.title {
+    display: block;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+    font-weight: 700;
 }

@@ -1,65 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Flask Auth Example</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
-    <style>
-        /* Custom Navbar Styles */
-        .navbar {
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .navbar-menu {
-            justify-content: flex-end;
-        }
-
-        .navbar-item {
-            font-weight: 700;
-            color: #f5f5f5;
-            transition: color 0.3s ease;
-        }
-
-        .navbar-item:hover {
-            color: #d3d3d3;
-            background-color: transparent;
-        }
-
-        /* Responsive adjustments for smaller screens */
-        @media screen and (max-width: 768px) {
-            .navbar-menu {
-                background-color: #3273dc; /* Adjust to match the primary color */
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="/static/css/navbar.css">
 </head>
 
 <body>
-    <section class="hero is-primary">
-
-        <div class="hero-head">
-            <nav class="navbar">
-                <div class="container">
-                    <div id="navbarMenuHeroA" class="navbar-menu">
+    <section class="navbar-section">
+        <div class="navbar-head">
+            <nav class="custom-navbar">
+                <div class="navbar-container">
+                    <div class="navbar-menu">
                         <div class="navbar-end">
-                            <a href="{{ url_for('main.landing_page') }}" class="navbar-item">
-                                Home
-                            </a>
+                            <a href="{{ url_for('main.landing_page') }}" class="navbar-item">Home</a>
                             {% if not current_user.is_authenticated %}
-                                <a href="{{ url_for('auth.login_page') }}" class="navbar-item">
-                                    Login
-                                </a>
-                                <a href="{{ url_for('auth.register') }}" class="navbar-item">
-                                    Register
-                                </a>
+                                <a href="{{ url_for('auth.login_page') }}" class="navbar-item">Login</a>
+                                <a href="{{ url_for('auth.register') }}" class="navbar-item">Register</a>
                             {% endif %}
                             {% if current_user.is_authenticated %}
-                                <a href="{{ url_for('auth.logout') }}" class="navbar-item">
-                                    Logout
-                                </a>
+                                <a href="{{ url_for('auth.logout') }}" class="navbar-item">Logout</a>
                             {% endif %}
                         </div>
                     </div>
@@ -67,10 +30,10 @@
             </nav>
         </div>
     </section>
-        <div class="container has-text-centered">
+
+    <div class="container">
         {% block content %}{% endblock %}
-        </div>
-    
+    </div>
 </body>
 
 </html>

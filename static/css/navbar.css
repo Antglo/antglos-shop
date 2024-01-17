@@ -1,7 +1,12 @@
 /* navbar.css */
 
+/* Custom nav dispay */
+nav {
+    display: block;
+}
+
 /* Primary color and background */
-.navbar {
+.custom-navbar {
     background-color: #800020;  /* Burgundy */
     padding: 1px;  /* Adjust vertical padding */
 }
@@ -14,7 +19,7 @@
 
 /* Navbar items */
 .navbar-item {
-    color: #fff;  /* White text color */
+    color: #272727;  /* White text color */
     margin-right: 15px;  /* Add some spacing between links */
 }
 
