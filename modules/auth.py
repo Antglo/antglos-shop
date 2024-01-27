@@ -64,7 +64,19 @@ def cart_page():
 	else:
 		return redirect(url_for('auth.login_page'))
 
-#route to add items to cart
+#Route to add items to the cart
+@auth.route('/add/<slug>', methods=['POST', 'GET'])
+def cart_add(slug):
+	cordproduct = Cord.query.filter_by(slug=slug).first_or_404
+	if request.method == 'POST':
+		item = request.form.get('cordproduct_id', None)
+		if item:
+			cart = Cart(session)
+			cart.add_or_update(item)
+			return render_template('auth/parts/cart_menu.html')
+		return render_template('auth/cart.html', cordproduct=cordproduct)
+
+#route to update the cart
 @auth.route('/cart_update/<cord_id>/<action>')
 def cart_update(cord_id, action):
 	cart = Cart(session)
@@ -91,13 +103,13 @@ def cart_update(cord_id, action):
 	else:
 		item = None
 
-	response = make_response(render_template('auth/parts/cart_item.html, item=item'))
+	response = make_response(render_template('auth/parts/cart_item.html', item=item))
 	response.headers['HX-Trigger'] = 'update-cart-menu'
 	return response
 
 @auth.route('/get-cart-count')
 def get_cart_count():
-	return render_template('/auth/parts/cart_item.html')
+	return render_template('/auth/parts/cart_menu.html')
 
 @auth.route('/get-total-amount')
 def get_total_amount():

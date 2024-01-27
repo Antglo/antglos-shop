@@ -38,7 +38,7 @@ class Cart(object):
     
     def add_or_update(self, pk, quantity=1):
         if not pk in self.cart:
-            self.cart[pk] = {'quantity': quantity, 'product_id': pk}
+            self.cart[pk] = {'quantity': quantity, 'cordproduct_id': pk}
 
         else:
             self.cart[pk]['quantity'] += int(quantity)
