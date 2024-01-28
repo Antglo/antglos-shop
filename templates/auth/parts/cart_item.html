@@ -3,8 +3,8 @@
         <td>
             <span class="mx-2">{{item.cord_id}}</span>
         </td>
-        <td>{{item.cordproduct.name}}</td>
-        <td>${{item.cordproduct.price}}</td>
+        <td><a href="{{url_for('auth.cart_add', slug=item.slug)}}"> {{item.cord.name}}</a></td>
+        <td>${{item.cord.price}}</td>
         <td>
             <div class="columns">
                 <a 

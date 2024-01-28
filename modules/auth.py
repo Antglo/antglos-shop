@@ -67,14 +67,14 @@ def cart_page():
 #Route to add items to the cart
 @auth.route('/add/<slug>', methods=['POST', 'GET'])
 def cart_add(slug):
-	cordproduct = Cord.query.filter_by(slug=slug).first_or_404
+	cordproduct = Cord.query.filter_by(slug=slug).first_or_404()
 	if request.method == 'POST':
 		item = request.form.get('cordproduct_id', None)
 		if item:
 			cart = Cart(session)
 			cart.add_or_update(item)
 			return render_template('auth/parts/cart_menu.html')
-		return render_template('auth/cart.html', cordproduct=cordproduct)
+		return render_template('landing.html', cordproduct=cordproduct)
 
 #route to update the cart
 @auth.route('/cart_update/<cord_id>/<action>')
@@ -157,7 +157,7 @@ def checkout():
 			flash('Something went wrong dumbass. Buy my friends better...', category='error')
 			return redirect(url_for('auth.checkout'))
 		
-	return render_template('checkout.html')
+	return render_template('auth/checkout.html')
 
 @auth.route('/success')
 def success():
