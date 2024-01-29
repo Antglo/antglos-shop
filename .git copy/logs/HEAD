@@ -1,0 +1,27 @@
+0000000000000000000000000000000000000000 079815974d9ce057a67c6015d88e3d7bb4b0e7c1 Antglo <jtab1277@gmail.com> 1702578592 -0500	clone: from https://github.com/Antglo/antglos-shop.git
+079815974d9ce057a67c6015d88e3d7bb4b0e7c1 24d1f94d4f07ed88d98b4c4f1a13d2b36fe2e873 Antglo <jtab1277@gmail.com> 1702579503 -0500	pull --tags origin shop-revisions (start): checkout 24d1f94d4f07ed88d98b4c4f1a13d2b36fe2e873
+24d1f94d4f07ed88d98b4c4f1a13d2b36fe2e873 079815974d9ce057a67c6015d88e3d7bb4b0e7c1 Antglo <jtab1277@gmail.com> 1702579585 -0500	rebase (abort): updating HEAD
+079815974d9ce057a67c6015d88e3d7bb4b0e7c1 24d1f94d4f07ed88d98b4c4f1a13d2b36fe2e873 Antglo <jtab1277@gmail.com> 1702579709 -0500	checkout: moving from master to shop-revisions
+24d1f94d4f07ed88d98b4c4f1a13d2b36fe2e873 d4956336e9b39ff94972ccf7df4ee40247e1484f Antglo <jtab1277@gmail.com> 1702584538 -0500	commit: User Creation Logic Added
+d4956336e9b39ff94972ccf7df4ee40247e1484f ec5f2b88a195f54d2ea4c0f416777ab63c8d2a4e Antglo <jtab1277@gmail.com> 1702585589 -0500	commit: Duplicate user error
+ec5f2b88a195f54d2ea4c0f416777ab63c8d2a4e 88f8910aafe77f2de4f6ae83f9833f2a03e26e1d Antglo <jtab1277@gmail.com> 1702586072 -0500	commit: Sessions Created auth.login
+88f8910aafe77f2de4f6ae83f9833f2a03e26e1d 054908ca8353e071325908bfb1d517413f1965bf Antglo <jtab1277@gmail.com> 1702587315 -0500	commit: navbar & prettier
+054908ca8353e071325908bfb1d517413f1965bf ad429c4662ea93cace63d2d3f2dbcadb0d23afba Antglo <jtab1277@gmail.com> 1702665675 -0500	commit: User Sessions
+ad429c4662ea93cace63d2d3f2dbcadb0d23afba 552d7a392c84b6be691f51cc9b2f1a21919aaef6 Antglo <jtab1277@gmail.com> 1702665840 -0500	commit: Layout fix
+552d7a392c84b6be691f51cc9b2f1a21919aaef6 700f5a7783eecca262af71fbe5f59dda4e022d41 Antglo <jtab1277@gmail.com> 1702668919 -0500	commit: Cleaning up loose ends
+700f5a7783eecca262af71fbe5f59dda4e022d41 62e8f4072f847768a649ad5fa06003bffb8f394d Antglo <jtab1277@gmail.com> 1702670841 -0500	commit: Updating styles
+62e8f4072f847768a649ad5fa06003bffb8f394d ae4ce91fd9cce6d9d23847fb52f090f3f3c9be24 Antglo <jtab1277@gmail.com> 1702911623 -0500	pull --tags origin shop-revisions: Fast-forward
+ae4ce91fd9cce6d9d23847fb52f090f3f3c9be24 8a97652e22992afb5fa14a5f53c2a89d4cc7c49c Antglo <jtab1277@gmail.com> 1702914680 -0500	commit: Relevant Page loading
+8a97652e22992afb5fa14a5f53c2a89d4cc7c49c 439e4f01d323b9a612e9f9d1d64bbc3b2bd20afc Antglo <jtab1277@gmail.com> 1702914819 -0500	commit: Adjusting Titles
+439e4f01d323b9a612e9f9d1d64bbc3b2bd20afc 2b44b7422f6cc0c4137abba8bf37b865f25431d4 Antglo <jtab1277@gmail.com> 1702916638 -0500	commit: layout fix
+2b44b7422f6cc0c4137abba8bf37b865f25431d4 2b44b7422f6cc0c4137abba8bf37b865f25431d4 Antglo <jtab1277@gmail.com> 1703000077 -0500	checkout: moving from shop-revisions to Shopping-Cart
+2b44b7422f6cc0c4137abba8bf37b865f25431d4 9c0d1be7b73f2a6cf0cdd06bf299b6150f777a73 Antglo <jtab1277@gmail.com> 1703000124 -0500	commit: adding Shopping Cart
+9c0d1be7b73f2a6cf0cdd06bf299b6150f777a73 956e891611c974e98bdae6a66f5e193daedbc9eb Antglo <jtab1277@gmail.com> 1703185784 -0500	commit: Adding Admin Authentication
+956e891611c974e98bdae6a66f5e193daedbc9eb f3dbc28407fbf2286eda6695a2cf65272f86e5c0 Antglo <jtab1277@gmail.com> 1704201046 -0500	pull --tags origin Shopping-Cart: Fast-forward
+f3dbc28407fbf2286eda6695a2cf65272f86e5c0 99cfcfcbf5caa2208dfc833705501277be4b19de Antglo <jtab1277@gmail.com> 1704207828 -0500	commit: Working Admin Panel
+99cfcfcbf5caa2208dfc833705501277be4b19de b2a27ab01cf152a5ce409a552811170c58b1d6b2 Antglo <jtab1277@gmail.com> 1704209646 -0500	commit: Update requirments.txt
+b2a27ab01cf152a5ce409a552811170c58b1d6b2 6a3379bbeffa96e6039310daab2f54ccec7652fa Antglo <jtab1277@gmail.com> 1704287420 -0500	checkout: moving from Shopping-Cart to Antglos_Shop
+6a3379bbeffa96e6039310daab2f54ccec7652fa 8af361fbbcdfbdc15e834e26986af119afe7a57b Antglo <jtab1277@gmail.com> 1704395455 -0500	commit: Csrf and file upload
+8af361fbbcdfbdc15e834e26986af119afe7a57b 8af361fbbcdfbdc15e834e26986af119afe7a57b Antglo <jtab1277@gmail.com> 1706534496 -0500	checkout: moving from Antglos_Shop to Antglos_Shop
+8af361fbbcdfbdc15e834e26986af119afe7a57b fbf3e3b5d1679d39b7a7c7d59becfa494cc21e78 Antglo <jtab1277@gmail.com> 1706534532 -0500	pull --tags origin Antglos_Shop: Fast-forward
+fbf3e3b5d1679d39b7a7c7d59becfa494cc21e78 1553967bfef52265f2116601a0dbe1a582da69aa Antglo <jtab1277@gmail.com> 1706534992 -0500	commit: Working

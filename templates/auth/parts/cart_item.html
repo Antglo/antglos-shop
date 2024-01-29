@@ -1,0 +1,31 @@
+{% if item %}
+    <tr id="cart-item-{{item.cord_id}}">
+        <td>
+            <span class="mx-2">{{item.cord_id}}</span>
+        </td>
+        <td><a href="{{url_for('auth.cart_add', slug=item.slug)}}"> {{item.cord.name}}</a></td>
+        <td>${{item.cord.price}}</td>
+        <td>
+            <div class="columns">
+                <a 
+                    hx-get="{{url_for('auth.cart_update', cord_id=item.cord_id, action='increment')}}" 
+                    hx-target="#cart-item-{{item.cord_id}}"
+                    hx-swap="outerHTML"
+                    class="btn"
+                > 
+                    <i class="icon icon-plus"></i>
+                </a>
+                <span class="mx-2">{{item.quantity}}</span>
+                <a 
+                    hx-get="{{url_for('auth.cart_update', cord_id=item.cord_id, action='decrement')}}" 
+                    hx-target="#cart-item-{{item.cord_id}}"
+                    hx-swap="outerHTML"
+                    class="btn"
+                > 
+                    <i class="icon icon-minus"></i>
+                </a>
+            </div>
+        </td>
+        <td>${{item.total_price}}</td>
+    </tr>
+{% endif %}

@@ -1,0 +1,41 @@
+/* navbar.css */
+
+/* Custom nav dispay */
+nav {
+    display: block;
+}
+
+/* Primary color and background */
+.custom-navbar {
+    background-color: #800020;  /* Burgundy */
+    padding: 1px;  /* Adjust vertical padding */
+}
+
+/* Container for links */
+.navbar-end {
+    display: flex;
+    justify-content: flex-end;  /* Right-align links */
+}
+
+/* Navbar items */
+.navbar-item {
+    color: #272727;  /* White text color */
+    margin-right: 15px;  /* Add some spacing between links */
+}
+
+/* Hover effect */
+.navbar-item:hover {
+    background-color: #4d0014;  /* Darker burgundy on hover */
+}
+
+/* Active/Clicked effect */
+.navbar-item.is-active {
+    background-color: #33000d;  /* Even darker burgundy for clicked item */
+}
+
+/* Add smokey effect on hover and active */
+.navbar-item:hover,
+.navbar-item.is-active {
+    transition: background-color 0.3s ease-in-out;  /* Smooth transition */
+    box-shadow: 0px 0px 10px 0px #000;  /* Add a subtle box-shadow for smokey effect */
+}

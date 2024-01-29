@@ -1,34 +1,47 @@
+<!-- template/auth/regester.html -->
+    {% extends "nav.html" %}
+
+    {% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Registration</title>
-    <link rel="stylesheet" href="/static/css/register.css">
+    <title>Antglos Shop - User Registration</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/auth.css">
+    <link rel="stylesheet" href="/static/css/scrollbar.css">
 </head>
 <body>
-    <div class="grid">
-        <form action="/register" method="POST|">
+    <section class="custom-section">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <div class="notification is-danger">
+            {{ messages[0] }} Go to <a href="{{ url_for('auth.login_page') }}">login page</a> to sign in.
+        </div>
+        {% endif %}
+        {% endwith %}   
+        <h1 class="title">Register</h1>
+        <form action="/register" method="POST">
             <div class="field">
-            <input 
-                type="text" 
-                name="username"
-                placeholder="Username"
-            >
+                <input 
+                    type="text" 
+                    name="username"
+                    placeholder="Username"
+                >
             </div>
             <div class="field">
-
+                <input 
+                    type="password" 
+                    name="password"
+                    placeholder="Password"
+                >
             </div>
-            <input 
-                type="text" 
-                name="username"
-                placeholder="Password"
-            >            
-        
-        <div class="field">
+            <div class="field">
                 <button class="submit_button">Submit</button>
             </div>
         </form>
-    </div>
+    </section>
 </body>
 </html>
+{% endblock %}

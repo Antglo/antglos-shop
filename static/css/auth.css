@@ -1,0 +1,63 @@
+:root {
+    --bg: #2c3338;
+    --btn: #ea4c88;
+    --btn-text: white;
+    --btn-bg: #3b4148;
+}
+html {
+    /* background-color: gray;
+    background-color: var(--bg);
+    width: 100%;
+    height: 100%;
+    overflow: scroll; */
+}
+
+body {
+    background-color: var(--bg);
+}
+
+.custom-section {
+    background-color: var(--bg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Viewport height to cover the whole screen */
+    margin: 0; /* Remove default margin */
+}
+
+.field {
+    margin-bottom: 1rem;
+}
+
+input {
+    background: transparent;
+    color: var(--btn-text);
+    border: 1px solid #3b4148;
+    margin: 0;
+    outline: 0;
+    padding: 0.75rem;
+    border-radius: 7px;
+    height: 2rem;
+}
+
+button.submit_button {
+    color: var(--btn-text);
+    background-color: var(--btn-bg);
+    font-weight: bold;
+    width: 200px; /* Adjust the width value as needed */
+    height: 2rem;
+    outline: 0;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 7px;
+    background-color: var(--btn);
+    margin: 0 auto; /* Add this line to center the button horizontally */
+}
+.h1 {
+    margin: 0 auto;
+}
+
+.title {
+    color: var(--btn-bg);
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Flask Auth Example</title>
+    <link rel="stylesheet" href="/static/css/navbar.css">
+</head>
+
+<body>
+    <section class="navbar-section">
+        <div class="navbar-head">
+            <nav class="custom-navbar">
+                <div class="navbar-container">
+                    <div class="navbar-menu">
+                        <div class="navbar-end">
+                            <a href="{{ url_for('main.landing_page') }}" class="navbar-item">Home</a>
+                            {% if not current_user.is_authenticated %}
+                                <a href="{{ url_for('auth.login_page') }}" class="navbar-item">Login</a>
+                                <a href="{{ url_for('auth.register') }}" class="navbar-item">Register</a>
+                            {% endif %}
+                            {% if current_user.is_authenticated %}
+                                <a href="{{ url_for('auth.cart_page') }}" class="navbar-item">Cart ({% include 'auth/parts/cart_menu.html' %})</a>
+                                <a href="{{ url_for('auth.logout') }}" class="navbar-item">Logout</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </section>
+
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+<script src="https://unpkg.com/htmx.org@1.9.5" integrity="sha384-xcuj3WpfgjlKF+FXhSQFQ0ZNr39ln+hwjN3npfM9VBnUskLolQAcN80McRIVOPuO" crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cord Item</title>
+</head>
+
+<body>
+    <div class="column col-3 col-md-4 col-sm-6 mb-2">
+        <div class="card">
+            {% if cord.image %}
+                <div class="card-image">
+                    <img loading="lazy" class="img-fit-cover img-responsive aspect-ratio" src="{{url_for('main.images_files', filename=cord.image)}}">
+                </div>
+            {% endif %}
+            
+            <div class="card-header">
+                <div class="card-title h5 text-ellipsis">{{cord.name}}</div>
+            </div>
+
+            <div class="card-price">
+                <small><strong>US$ {{cord.price}}</strong></small>
+            </div>
+            <div class="card-button">
+            <form
+                hx-post="{{url_for('auth.cart_add', slug=cord.slug)}}"
+                hx-target="#cartMenu"
+                hx-swap="outerHTML"
+            >
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                <input type="hidden" name="cordproduct_id" value="{{ cord.id }}">
+                <button type="submit" class="btn btn-primary">Add to Cart</button>
+            </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
