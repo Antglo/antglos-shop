@@ -143,7 +143,7 @@ def checkout():
 
 			for item in cart:
 				order_item = OrderItem(
-					product_id = item['product_id'],
+					product_id = item['cord_id'],
 					quantity = item['quantity'],
 					order_id = order.id
 				)
