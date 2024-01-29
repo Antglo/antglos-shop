@@ -28,7 +28,7 @@ class Cord(db.Model):
 	price = db.Column(db.DECIMAL(10, 2), nullable=False)
 	desc = db.Column(db.String(500), nullable=True)
 	image = db.Column(db.String(128), nullable=True, unique=True)
-	order_items = db.relationship('OrderItem', back_populates='cordproducts')
+	order_items = db.relationship('OrderItem', back_populates='cordproducts', cascade='all, delete, delete-orphan')
 
 	def __repr__(self):
 		return f'id: {self.id} - Name: {self.name} - ${self.price}'
@@ -45,7 +45,7 @@ class Order(db.Model):
     total_amount = db.Column(db.Integer(), nullable=False, unique=False)
 
     def __repr__(self):
-        return self.full_name + ' - ' + self.email_address + ' - ' + self.created_at
+        return self.full_name + ' - ' + self.email_address
     
 
 
@@ -58,4 +58,4 @@ class OrderItem(db.Model):
     order = db.relationship('Order', back_populates='items')
 
     def __repr__(self):
-        return f'Order id:{self.order_id} - CordProduct: {self.cordproducts.name}'
+        return f'Order id:{self.order_id} - CordProduct: {self.products.name}'

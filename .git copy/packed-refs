@@ -1,0 +1,5 @@
+# pack-refs with: peeled fully-peeled sorted 
+1029e3d2e69686a7902278a4d6418d35198eeea7 refs/remotes/origin/main
+079815974d9ce057a67c6015d88e3d7bb4b0e7c1 refs/remotes/origin/master
+079815974d9ce057a67c6015d88e3d7bb4b0e7c1 refs/remotes/origin/penny
+24d1f94d4f07ed88d98b4c4f1a13d2b36fe2e873 refs/remotes/origin/shop-revisions

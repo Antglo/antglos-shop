@@ -1,0 +1,13 @@
+0000000000000000000000000000000000000000 24d1f94d4f07ed88d98b4c4f1a13d2b36fe2e873 Antglo <jtab1277@gmail.com> 1702579709 -0500	branch: Created from origin/shop-revisions
+24d1f94d4f07ed88d98b4c4f1a13d2b36fe2e873 d4956336e9b39ff94972ccf7df4ee40247e1484f Antglo <jtab1277@gmail.com> 1702584538 -0500	commit: User Creation Logic Added
+d4956336e9b39ff94972ccf7df4ee40247e1484f ec5f2b88a195f54d2ea4c0f416777ab63c8d2a4e Antglo <jtab1277@gmail.com> 1702585589 -0500	commit: Duplicate user error
+ec5f2b88a195f54d2ea4c0f416777ab63c8d2a4e 88f8910aafe77f2de4f6ae83f9833f2a03e26e1d Antglo <jtab1277@gmail.com> 1702586072 -0500	commit: Sessions Created auth.login
+88f8910aafe77f2de4f6ae83f9833f2a03e26e1d 054908ca8353e071325908bfb1d517413f1965bf Antglo <jtab1277@gmail.com> 1702587315 -0500	commit: navbar & prettier
+054908ca8353e071325908bfb1d517413f1965bf ad429c4662ea93cace63d2d3f2dbcadb0d23afba Antglo <jtab1277@gmail.com> 1702665675 -0500	commit: User Sessions
+ad429c4662ea93cace63d2d3f2dbcadb0d23afba 552d7a392c84b6be691f51cc9b2f1a21919aaef6 Antglo <jtab1277@gmail.com> 1702665840 -0500	commit: Layout fix
+552d7a392c84b6be691f51cc9b2f1a21919aaef6 700f5a7783eecca262af71fbe5f59dda4e022d41 Antglo <jtab1277@gmail.com> 1702668919 -0500	commit: Cleaning up loose ends
+700f5a7783eecca262af71fbe5f59dda4e022d41 62e8f4072f847768a649ad5fa06003bffb8f394d Antglo <jtab1277@gmail.com> 1702670841 -0500	commit: Updating styles
+62e8f4072f847768a649ad5fa06003bffb8f394d ae4ce91fd9cce6d9d23847fb52f090f3f3c9be24 Antglo <jtab1277@gmail.com> 1702911623 -0500	pull --tags origin shop-revisions: Fast-forward
+ae4ce91fd9cce6d9d23847fb52f090f3f3c9be24 8a97652e22992afb5fa14a5f53c2a89d4cc7c49c Antglo <jtab1277@gmail.com> 1702914680 -0500	commit: Relevant Page loading
+8a97652e22992afb5fa14a5f53c2a89d4cc7c49c 439e4f01d323b9a612e9f9d1d64bbc3b2bd20afc Antglo <jtab1277@gmail.com> 1702914819 -0500	commit: Adjusting Titles
+439e4f01d323b9a612e9f9d1d64bbc3b2bd20afc 2b44b7422f6cc0c4137abba8bf37b865f25431d4 Antglo <jtab1277@gmail.com> 1702916638 -0500	commit: layout fix

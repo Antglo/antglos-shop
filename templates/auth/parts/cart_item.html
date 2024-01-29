@@ -1,15 +1,15 @@
 {% if item %}
-    <tr id="cart-item-{{item.product_id}}">
+    <tr id="cart-item-{{item.cord_id}}">
         <td>
-            <span class="mx-2">{{item.product_id}}</span>
+            <span class="mx-2">{{item.cord_id}}</span>
         </td>
-        <td><a href="{{url_for('shop.details', slug=item.slug)}}">{{item.product.name}}</a></td>
-        <td>Rs. {{item.product.price}}</td>
+        <td><a href="{{url_for('auth.cart_add', slug=item.slug)}}"> {{item.cord.name}}</a></td>
+        <td>${{item.cord.price}}</td>
         <td>
             <div class="columns">
                 <a 
-                    hx-get="{{url_for('cart.cart_update', product_id=item.product_id, action='increment')}}" 
-                    hx-target="#cart-item-{{item.product_id}}"
+                    hx-get="{{url_for('auth.cart_update', cord_id=item.cord_id, action='increment')}}" 
+                    hx-target="#cart-item-{{item.cord_id}}"
                     hx-swap="outerHTML"
                     class="btn"
                 > 
@@ -17,8 +17,8 @@
                 </a>
                 <span class="mx-2">{{item.quantity}}</span>
                 <a 
-                    hx-get="{{url_for('cart.cart_update', product_id=item.product_id, action='decrement')}}" 
-                    hx-target="#cart-item-{{item.product_id}}"
+                    hx-get="{{url_for('auth.cart_update', cord_id=item.cord_id, action='decrement')}}" 
+                    hx-target="#cart-item-{{item.cord_id}}"
                     hx-swap="outerHTML"
                     class="btn"
                 > 
@@ -26,6 +26,6 @@
                 </a>
             </div>
         </td>
-        <td>Rs. {{item.total_price}}</td>
+        <td>${{item.total_price}}</td>
     </tr>
 {% endif %}

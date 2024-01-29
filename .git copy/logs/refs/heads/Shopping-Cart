@@ -1,0 +1,6 @@
+0000000000000000000000000000000000000000 2b44b7422f6cc0c4137abba8bf37b865f25431d4 Antglo <jtab1277@gmail.com> 1703000077 -0500	branch: Created from shop-revisions
+2b44b7422f6cc0c4137abba8bf37b865f25431d4 9c0d1be7b73f2a6cf0cdd06bf299b6150f777a73 Antglo <jtab1277@gmail.com> 1703000124 -0500	commit: adding Shopping Cart
+9c0d1be7b73f2a6cf0cdd06bf299b6150f777a73 956e891611c974e98bdae6a66f5e193daedbc9eb Antglo <jtab1277@gmail.com> 1703185784 -0500	commit: Adding Admin Authentication
+956e891611c974e98bdae6a66f5e193daedbc9eb f3dbc28407fbf2286eda6695a2cf65272f86e5c0 Antglo <jtab1277@gmail.com> 1704201046 -0500	pull --tags origin Shopping-Cart: Fast-forward
+f3dbc28407fbf2286eda6695a2cf65272f86e5c0 99cfcfcbf5caa2208dfc833705501277be4b19de Antglo <jtab1277@gmail.com> 1704207828 -0500	commit: Working Admin Panel
+99cfcfcbf5caa2208dfc833705501277be4b19de b2a27ab01cf152a5ce409a552811170c58b1d6b2 Antglo <jtab1277@gmail.com> 1704209646 -0500	commit: Update requirments.txt

@@ -1,0 +1,23 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[remote "origin"]
+	url = https://github.com/Antglo/antglos-shop.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
+[pull]
+	rebase = true
+[branch "shop-revisions"]
+	remote = origin
+	merge = refs/heads/shop-revisions
+[branch "Shopping-Cart"]
+	vscode-merge-base = shop-revisions
+	remote = origin
+	merge = refs/heads/Shopping-Cart
+[branch "Antglos_Shop"]
+	remote = origin
+	merge = refs/heads/Antglos_Shop

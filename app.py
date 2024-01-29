@@ -35,6 +35,13 @@ def create_app():
     def load_user(user_id):
         return User.query.get(int(user_id))
     
+    #Create cart session context
+    from modules.cart import Cart
+    @app.context_processor
+    def cart_context():
+        cart_obj = Cart(session)
+        return dict(cart_context=cart_obj)
+    
     #create superusers from CLI
     @click.command(name="createsuperuser")
     @with_appcontext
