@@ -40,10 +40,6 @@ To create a superuser, navigate to the main folder (antglos_shop) and run the fo
 
 Replace `(username)` and `(password)` with your desired superuser credentials.
 
-## Project Progress
-
-![Progress Bar](https://camo.githubusercontent.com/e2e83a63f4c01bd8be27ef6ee57e0f97dbe77ca66de609e8f60e466f389fc582/68747470733a2f2f676570732e6465762f70726f67726573732f3735)
-
 ## Thanks
 
 Thank you for checking out our project! If you have any questions, issues, or suggestions, feel free to open an [issue](https://github.com/Antglo/antglos-shop/issues) or contribute to the project.
